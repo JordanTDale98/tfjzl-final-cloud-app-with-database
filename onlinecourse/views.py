@@ -147,9 +147,11 @@ def show_exam_result(request, course_id, submission_id):
     for choice in choices:
         if choice.is_correct:
             total_score += choice.question.grade
-        context['course']
-        context['choice']
-        context['grade']
+    context['course'] = course
+    context['choice'] = total_score
+    context['grade'] = choices
+
+    return render(request, 'onlinecourse/exam_result_bootstrap.html', context)
 
 
 
